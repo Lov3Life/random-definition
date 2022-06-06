@@ -16,7 +16,14 @@ const Definictions = [
     "Przewodnik elektryczny – substancja, która dobrze przewodzi prąd elektryczny, a przewodzenie prądu ma charakter elektronowy (przewodnik metaliczny). Atomy przewodnika tworzą wiązania, w których elektrony walencyjne (jeden lub więcej) pozostają swobodne (nie związane z żadnym z atomów), tworząc w ten sposób tzw. gaz elektronowy (zob. też wiązanie metaliczne). W przypadku, gdy nośnikami ładunków są jony, mówi się o przewodnikach jonowych lub przewodnikach elektrolitycznych.",
     "Nadprzewodnictwo – stan materiału polegający na zerowej rezystancji, jest osiągany w niektórych materiałach w niskiej temperaturze.",
     "Półprzewodniki – substancje, najczęściej krystaliczne, których konduktywność może być zmieniana w szerokim zakresie (na przykład od 10<sup>-8</sup> do 10<sup>3</sup> S/cm) poprzez domieszkowanie, ogrzewanie, oświetlanie lub inne czynniki. Przewodnictwo typowego półprzewodnika plasuje się między przewodnictwem metali i dielektryków.",
-    "Konduktancja, przewodność elektryczna – miara podatności elementu na przepływ prądu elektrycznego, odwrotność rezystancji. Jednostką konduktancji w układzie SI jest simens (S)."
+    "Konduktancja, przewodność elektryczna – miara podatności elementu na przepływ prądu elektrycznego, odwrotność rezystancji. Jednostką konduktancji w układzie SI jest simens (S).",
+    "Moc – skalarna wielkość fizyczna określająca pracę wykonaną w jednostce czasu przez układ fizyczny.",
+    "Praca – skalarna wielkość fizyczna, miara ilości energii przekazywanej między układami fizycznymi w procesach mechanicznych, elektrycznych, termodynamicznych i innych.",
+    "Przemieszczenie (wektor przesunięcia) – wektor łączący położenie początkowe z końcowym. Dla dowolnego ruchu krzywoliniowego wartość tego wektora jest mniejsza bądź równa drodze pokonanej przez ciało. Równość ma miejsce wówczas, gdy promień krzywizny toru dąży do nieskończoności (ruch prostoliniowy).",
+    "Tor ruchu, trajektoria – krzywa zakreślana w przestrzeni przez wybrany punkt poruszającego się ciała. W inercjalnym układzie odniesienia, jeżeli na poruszający punkt materialny działa niezrównoważona siła, której kierunek nie jest styczny do toru ruchu, wówczas tor ruchu jest krzywoliniowy.",
+    "Przyspieszenie – wektorowa wielkość fizyczna wyrażająca zmianę wektora prędkości w czasie.Przyspieszenie definiuje się jako pochodną prędkości po czasie, czyli jest szybkością zmiany prędkości. Jeśli przyspieszenie jest skierowane przeciwnie do zwrotu prędkości ruchu, to wartość prędkości w tym ruchu maleje, a przyspieszenie to jest wtedy nazywane opóźnieniem.",
+    "Grawitacja (ciążenie powszechne) – zjawisko naturalne polegające na tym, że wszystkie obiekty posiadające masę lub energię wzajemnie przyciągają się",
+    "Potencjał (łac. potentia 'zdolność, możność') – pole skalarne określające pewne pole wektorowe."
 ];
 
 RandomButton.addEventListener("click", getRandomNumber);
