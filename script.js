@@ -36,11 +36,7 @@ function getRandomNumber(){
         //console.log("przed: " + p);
         return getRandomNumber();
     }
-    for( let i=0; i<=(Definictions.length - 1); i++) {
-        if(i == p) {
-            Main.innerHTML = (Definictions[p] + "<br><br><br>Numer przeglądanej definicji w tablicy wynosi: " +  x); 
-        }
-    }
+    Main.innerHTML = (Definictions[p] + "<br><br><br>Numer przeglądanej definicji w tablicy wynosi: " +  x); 
     //console.log(p);
 }
 
