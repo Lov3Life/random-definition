@@ -3,6 +3,8 @@ const Main = document.querySelector("h3");
 const lengthObject = document.querySelector("h2");
 const P = document.querySelector("p");
 const SelectButton = document.getElementById("select-button");
+var span = document.querySelector("span");
+var inputValue;
 const Definictions = [
     "Entropia (s lub S) – termodynamiczna funkcja stanu, określająca kierunek przebiegu procesów spontanicznych (samorzutnych) w odosobnionym układzie termodynamicznym. Entropia jest miarą stopnia nieuporządkowania układu i rozproszenia energii. Jest wielkością ekstensywną. Zgodnie z drugą zasadą termodynamiki, jeżeli układ termodynamiczny przechodzi od jednego stanu równowagi do drugiego, bez udziału czynników zewnętrznych (a więc spontanicznie), to jego entropia zawsze rośnie. Pojęcie entropii wprowadził niemiecki uczony Rudolf Clausius.", 
     "Negentropia (negatywna entropia, ujemna entropia, ekstropia) – w teorii systemów i cybernetyce – miara stopnia organizacji. Stanowi różnicę pomiędzy maksymalną możliwą wartością entropii – odpowiadającą całkowitej dezorganizacji systemu, a jej aktualną wartością. Przy dezorganizacji systemu negentropia maleje, podczas gdy entropia wzrasta i – na odwrót – wzrostowi organizacji odpowiada zawsze wzrost negentropii.",
@@ -11,8 +13,8 @@ const Definictions = [
     "Droga – długość odcinka toru (krzywej lub prostej), jaką pokonuje wybrany punkt ciała lub punkt materialny podczas swojego ruchu. Droga nie oznacza odległości pomiędzy dwoma punktami wyznaczającymi początek i koniec ruchu. Liczy się ją wzdłuż toru ruchu, czyli po krzywej, po której porusza się ciało.",
     "Czas – wielkość fizyczna określająca kolejność zdarzeń oraz odstępy między zdarzeniami zachodzącymi w tym samym miejscu. Pojęcie to jest również przedmiotem rozważań filozoficznych.",
     "Napięcie elektryczne – różnica potencjałów elektrycznych między dwoma punktami obwodu elektrycznego lub pola elektrycznego. Symbolem napięcia jest U. Napięcie elektryczne jest to stosunek pracy wykonanej przeciwko polu, podczas przenoszenia ładunku elektrycznego między punktami, dla których określa się napięcie, do wartości tego ładunku",
-    "Rezystancja, opór (elektryczny, czynny), oporność (czynna) (z łac. resistere — sprzeciwiać się, stawiać opór) – wielkość charakteryzująca relację między napięciem a natężeniem prądu elektrycznego w obwodach prądu stałego. W obwodach prądu przemiennego rezystancją nazywa się część rzeczywistą impedancji zespolonej.",
-    "Natężenie prądu, nazywane też prądem elektrycznym – wielkość fizyczna charakteryzująca przepływ prądu elektrycznego zdefiniowana jako stosunek wartości ładunku elektrycznego przepływającego przez wyznaczoną powierzchnię do czasu przepływu ładunku.",
+    "Rezystancja, opór (elektryczny, czynny), oporność (czynna) – wielkość charakteryzująca relację między napięciem a natężeniem prądu elektrycznego w obwodach prądu stałego. W obwodach prądu przemiennego rezystancją nazywa się część rzeczywistą impedancji zespolonej.",
+    "Natężenie prądu – wielkość fizyczna charakteryzująca przepływ prądu elektrycznego zdefiniowana jako stosunek wartości ładunku elektrycznego przepływającego przez wyznaczoną powierzchnię do czasu przepływu ładunku.",
     "Przewodnik elektryczny – substancja, która dobrze przewodzi prąd elektryczny, a przewodzenie prądu ma charakter elektronowy (przewodnik metaliczny). Atomy przewodnika tworzą wiązania, w których elektrony walencyjne (jeden lub więcej) pozostają swobodne (nie związane z żadnym z atomów), tworząc w ten sposób tzw. gaz elektronowy (zob. też wiązanie metaliczne). W przypadku, gdy nośnikami ładunków są jony, mówi się o przewodnikach jonowych lub przewodnikach elektrolitycznych.",
     "Nadprzewodnictwo – stan materiału polegający na zerowej rezystancji, jest osiągany w niektórych materiałach w niskiej temperaturze.",
     "Półprzewodniki – substancje, najczęściej krystaliczne, których konduktywność może być zmieniana w szerokim zakresie (na przykład od 10<sup>-8</sup> do 10<sup>3</sup> S/cm) poprzez domieszkowanie, ogrzewanie, oświetlanie lub inne czynniki. Przewodnictwo typowego półprzewodnika plasuje się między przewodnictwem metali i dielektryków.",
@@ -23,7 +25,7 @@ const Definictions = [
     "Tor ruchu, trajektoria – krzywa zakreślana w przestrzeni przez wybrany punkt poruszającego się ciała. W inercjalnym układzie odniesienia, jeżeli na poruszający punkt materialny działa niezrównoważona siła, której kierunek nie jest styczny do toru ruchu, wówczas tor ruchu jest krzywoliniowy.",
     "Przyspieszenie – wektorowa wielkość fizyczna wyrażająca zmianę wektora prędkości w czasie.Przyspieszenie definiuje się jako pochodną prędkości po czasie, czyli jest szybkością zmiany prędkości. Jeśli przyspieszenie jest skierowane przeciwnie do zwrotu prędkości ruchu, to wartość prędkości w tym ruchu maleje, a przyspieszenie to jest wtedy nazywane opóźnieniem.",
     "Grawitacja (ciążenie powszechne) – zjawisko naturalne polegające na tym, że wszystkie obiekty posiadające masę lub energię wzajemnie przyciągają się",
-    "Potencjał (łac. potentia 'zdolność, możność') – pole skalarne określające pewne pole wektorowe."
+    "Potencjał – pole skalarne określające pewne pole wektorowe."
 ];
 
 RandomButton.addEventListener("click", getRandomNumber);
@@ -36,7 +38,7 @@ function getRandomNumber(){
         //console.log("przed: " + p);
         return getRandomNumber();
     }
-    Main.innerHTML = (Definictions[p] + "<br><br><br>Numer przeglądanej definicji w tablicy wynosi: " +  x); 
+    Main.innerHTML = (Definictions[p] + "<br><br><br>Numer przeglądanej definicji w tablicy wynosi: " +  x);
     //console.log(p);
 }
 
@@ -55,3 +57,13 @@ function getDefiniction() {
     z--
     Main.innerHTML = (Definictions[z] + "<br><br><br>Numer przeglądanej definicji w tablicy wynosi: " +  input);
 }
+
+setInterval(function() {
+    inputValue = document.querySelector("input").value;
+    if(inputValue == false) {
+        return;
+    } else {
+        var i = Definictions[inputValue -1].substring(0, Definictions[inputValue -1].indexOf("–") -1);
+        span.innerHTML = i;
+    }
+},100)
