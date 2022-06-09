@@ -4,7 +4,7 @@ const lengthObject = document.querySelector("h2");
 const P = document.querySelector("p");
 const SelectButton = document.getElementById("select-button");
 var span = document.querySelector("span");
-var inputValue;
+var inputValue = document.querySelector("input");
 const Definictions = [
     "Entropia (s lub S) – termodynamiczna funkcja stanu, określająca kierunek przebiegu procesów spontanicznych (samorzutnych) w odosobnionym układzie termodynamicznym. Entropia jest miarą stopnia nieuporządkowania układu i rozproszenia energii. Jest wielkością ekstensywną. Zgodnie z drugą zasadą termodynamiki, jeżeli układ termodynamiczny przechodzi od jednego stanu równowagi do drugiego, bez udziału czynników zewnętrznych (a więc spontanicznie), to jego entropia zawsze rośnie. Pojęcie entropii wprowadził niemiecki uczony Rudolf Clausius.", 
     "Negentropia (negatywna entropia, ujemna entropia, ekstropia) – w teorii systemów i cybernetyce – miara stopnia organizacji. Stanowi różnicę pomiędzy maksymalną możliwą wartością entropii – odpowiadającą całkowitej dezorganizacji systemu, a jej aktualną wartością. Przy dezorganizacji systemu negentropia maleje, podczas gdy entropia wzrasta i – na odwrót – wzrostowi organizacji odpowiada zawsze wzrost negentropii.",
@@ -46,7 +46,7 @@ window.onload = HowMuchDefiniction();
 
 function HowMuchDefiniction() {
     lengthObject.innerHTML = "Ilość definicji w tablicy: " + Definictions.length;
-    P.innerHTML = "Wybierz definicje z tablicy po jej numerze: <input min='1' max="+Definictions.length+" type='number'>"
+    P.innerHTML = "Wybierz definicje z tablicy po jej numerze: <input value='0' min='1' max="+Definictions.length+" type='number'>"
 }
 
 SelectButton.addEventListener("click", getDefiniction);
@@ -58,12 +58,7 @@ function getDefiniction() {
     Main.innerHTML = (Definictions[z] + "<br><br><br>Numer przeglądanej definicji w tablicy wynosi: " +  input);
 }
 
-setInterval(function() {
-    inputValue = document.querySelector("input").value;
-    if(inputValue == false) {
-        return;
-    } else {
-        var i = Definictions[inputValue -1].substring(0, Definictions[inputValue -1].indexOf("–") -1);
-        span.innerHTML = i;
-    }
-},100)
+document.querySelector("input").addEventListener("change", () =>{
+    var i = parseFloat(document.querySelector("input").value);
+    document.querySelector("span").innerHTML = Definictions[i -1].substring(0, Definictions[i -1].indexOf("–") -1);
+});
