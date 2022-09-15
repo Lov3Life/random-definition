@@ -32,8 +32,8 @@ RandomButton.addEventListener("click", getRandomNumber);
 
 function getRandomNumber(){
     let p = (Math.random() * (Definictions.length - 1)).toFixed();
-    let x = Number(p)
-    x++
+    let x = Number(p);
+    x++;
     if(Main.innerHTML == (Definictions[p] + "<br><br><br>Numer przeglądanej definicji w tablicy wynosi: " +  x)) {
         //console.log("przed: " + p);
         return getRandomNumber();
@@ -46,15 +46,15 @@ window.onload = HowMuchDefiniction();
 
 function HowMuchDefiniction() {
     lengthObject.innerHTML = "Ilość definicji w tablicy: " + Definictions.length;
-    P.innerHTML = "Wybierz definicje z tablicy po jej numerze: <input value='0' min='1' max="+Definictions.length+" type='number'>"
+    P.innerHTML = "Wybierz definicje z tablicy po jej numerze: <input value='0' min='1' max="+Definictions.length+" type='number'><span>&nbsp;</span>";
 }
 
 SelectButton.addEventListener("click", getDefiniction);
 
 function getDefiniction() {
     var input = parseInt(document.querySelector("input").value);
-    var z = input
-    z--
+    var z = input;
+    z--;
     Main.innerHTML = (Definictions[z] + "<br><br><br>Numer przeglądanej definicji w tablicy wynosi: " +  input);
 }
 
